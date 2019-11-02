@@ -1,11 +1,22 @@
 #!/usr/bin/env python
 import boto3
 import json
+import sys
 from botocore.exceptions import ClientError
 
 print "Content-type: text/html\n\n";
 
+secret="448a0dcb90495847f40e4c68"
+
 def lambda_handler(event, context):
+    json_data = json.load(sys.stdin)
+    print json_data
+
+
+
+
+
+
     # Replace sender@example.com with your "From" address.
     # This address must be verified with Amazon SES.
     SENDER = "dan@dandietz.com"
@@ -91,3 +102,5 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')
     }
+
+lambda_function()
